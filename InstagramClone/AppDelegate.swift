@@ -21,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //configure Firebase
         FirebaseApp.configure()
         
+        configureInitialViewController(for: window)
 
-        let initialViewController = UIStoryboard.initialViewController(for: .login)
+        /*let initialViewController = UIStoryboard.initialViewController(for: .login)
         window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible()*/
         
         return true
     }
@@ -53,4 +54,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+extension AppDelegate {
+    
+    func configureInitialViewController(for window: UIWindow?) {
+        let defaults = UserDefaults.standard
+        let initialVC: UIViewController
+        
+        if Auth.auth().currentUser != nil, let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data, let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+            User.setCurrent(user)
+            
+            initialVC = UIStoryboard.initialViewController(for: .main)
+        } else {
+            initialVC = UIStoryboard.initialViewController(for: .login)
+        }
+        
+        window?.rootViewController = initialVC
+        window?.makeKeyAndVisible()
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -48,11 +48,11 @@ extension LoginViewController: FUIAuthDelegate {
         }
         
         
-        
         if let fbUser = Auth.auth().currentUser {
             UserService.show(forUID: fbUser.uid, completion: { (user) in
                 if let user = user {
-                    User.setCurrent(user)
+                    User.setCurrent(user, writeToUserDefaults: true)
+                    
                     let initialViewController = UIStoryboard.initialViewController(for: .main)
                     self.view.window?.rootViewController = initialViewController
                     self.view.window?.makeKeyAndVisible()
