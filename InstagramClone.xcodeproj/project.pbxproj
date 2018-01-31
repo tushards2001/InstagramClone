@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		520D2D4A2021ABE300592DC0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D492021ABE300592DC0 /* HomeViewController.swift */; };
 		520D2D4C2021ABF500592DC0 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D4B2021ABF500592DC0 /* FindFriendsViewController.swift */; };
+		520D2D4E2021BD6E00592DC0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D4D2021BD6E00592DC0 /* MainTabBarController.swift */; };
+		520D2D502021D27600592DC0 /* IGPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D4F2021D27600592DC0 /* IGPhotoHelper.swift */; };
+		520D2D522021DE7100592DC0 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D512021DE7100592DC0 /* StorageService.swift */; };
+		520D2D542021E06900592DC0 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D532021E06900592DC0 /* PostService.swift */; };
+		520D2D562021E6D000592DC0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D552021E6D000592DC0 /* Post.swift */; };
+		520D2D582021ED1300592DC0 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D572021ED1300592DC0 /* UIImage+Size.swift */; };
+		520D2D5A2021EE3F00592DC0 /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D592021EE3F00592DC0 /* StorageReference+Post.swift */; };
+		520D2D6020220B1000592DC0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520D2D5F20220B0D00592DC0 /* Home.storyboard */; };
 		52908F1F20206A250022BD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52908F1E20206A250022BD71 /* AppDelegate.swift */; };
 		52908F2420206A250022BD71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52908F2220206A250022BD71 /* Main.storyboard */; };
 		52908F2620206A250022BD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52908F2520206A250022BD71 /* Assets.xcassets */; };
@@ -27,6 +35,14 @@
 /* Begin PBXFileReference section */
 		520D2D492021ABE300592DC0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		520D2D4B2021ABF500592DC0 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
+		520D2D4D2021BD6E00592DC0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		520D2D4F2021D27600592DC0 /* IGPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGPhotoHelper.swift; sourceTree = "<group>"; };
+		520D2D512021DE7100592DC0 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		520D2D532021E06900592DC0 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		520D2D552021E6D000592DC0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		520D2D572021ED1300592DC0 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
+		520D2D592021EE3F00592DC0 /* StorageReference+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
+		520D2D5E20220B0D00592DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		52908F1B20206A250022BD71 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52908F1E20206A250022BD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52908F2320206A250022BD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +116,7 @@
 				52908F402020964D0022BD71 /* CreateUsernameViewController.swift */,
 				520D2D492021ABE300592DC0 /* HomeViewController.swift */,
 				520D2D4B2021ABF500592DC0 /* FindFriendsViewController.swift */,
+				520D2D4D2021BD6E00592DC0 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				52CEF8062020B86A001E91C8 /* Storyboard+Utility.swift */,
+				520D2D572021ED1300592DC0 /* UIImage+Size.swift */,
+				520D2D592021EE3F00592DC0 /* StorageReference+Post.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -115,6 +134,7 @@
 		52908F3420206DA60022BD71 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				520D2D4F2021D27600592DC0 /* IGPhotoHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -123,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				52908F3E202093460022BD71 /* User.swift */,
+				520D2D552021E6D000592DC0 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				52CEF8022020A906001E91C8 /* UserService.swift */,
+				520D2D512021DE7100592DC0 /* StorageService.swift */,
+				520D2D532021E06900592DC0 /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -138,6 +161,7 @@
 		52908F3720206DC00022BD71 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				520D2D5F20220B0D00592DC0 /* Home.storyboard */,
 				52908F2720206A250022BD71 /* LaunchScreen.storyboard */,
 				52908F2220206A250022BD71 /* Main.storyboard */,
 				52908F3A2020814B0022BD71 /* Login.storyboard */,
@@ -244,6 +268,7 @@
 				52908F2920206A250022BD71 /* LaunchScreen.storyboard in Resources */,
 				52908F3B2020814B0022BD71 /* Login.storyboard in Resources */,
 				52908F2620206A250022BD71 /* Assets.xcassets in Resources */,
+				520D2D6020220B1000592DC0 /* Home.storyboard in Resources */,
 				52908F3120206AE80022BD71 /* GoogleService-Info.plist in Resources */,
 				52908F2420206A250022BD71 /* Main.storyboard in Resources */,
 			);
@@ -320,12 +345,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				52908F3F202093460022BD71 /* User.swift in Sources */,
+				520D2D522021DE7100592DC0 /* StorageService.swift in Sources */,
 				52908F3D202081CC0022BD71 /* LoginViewController.swift in Sources */,
+				520D2D4E2021BD6E00592DC0 /* MainTabBarController.swift in Sources */,
 				52CEF8032020A906001E91C8 /* UserService.swift in Sources */,
+				520D2D562021E6D000592DC0 /* Post.swift in Sources */,
+				520D2D582021ED1300592DC0 /* UIImage+Size.swift in Sources */,
 				520D2D4A2021ABE300592DC0 /* HomeViewController.swift in Sources */,
+				520D2D502021D27600592DC0 /* IGPhotoHelper.swift in Sources */,
 				52CEF8072020B86A001E91C8 /* Storyboard+Utility.swift in Sources */,
 				520D2D4C2021ABF500592DC0 /* FindFriendsViewController.swift in Sources */,
+				520D2D5A2021EE3F00592DC0 /* StorageReference+Post.swift in Sources */,
 				52CEF8052020B7BC001E91C8 /* Constants.swift in Sources */,
+				520D2D542021E06900592DC0 /* PostService.swift in Sources */,
 				52908F412020964D0022BD71 /* CreateUsernameViewController.swift in Sources */,
 				52908F1F20206A250022BD71 /* AppDelegate.swift in Sources */,
 			);
@@ -334,6 +366,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		520D2D5F20220B0D00592DC0 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				520D2D5E20220B0D00592DC0 /* Base */,
+			);
+			name = Home.storyboard;
+			path = /L10/Tushar/Learning/InstagramClone/InstagramClone/Storyboards;
+			sourceTree = "<absolute>";
+		};
 		52908F2220206A250022BD71 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
