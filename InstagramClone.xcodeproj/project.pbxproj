@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520D2D4A2021ABE300592DC0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D492021ABE300592DC0 /* HomeViewController.swift */; };
+		520D2D4C2021ABF500592DC0 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D2D4B2021ABF500592DC0 /* FindFriendsViewController.swift */; };
 		52908F1F20206A250022BD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52908F1E20206A250022BD71 /* AppDelegate.swift */; };
-		52908F2120206A250022BD71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52908F2020206A250022BD71 /* ViewController.swift */; };
 		52908F2420206A250022BD71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52908F2220206A250022BD71 /* Main.storyboard */; };
 		52908F2620206A250022BD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52908F2520206A250022BD71 /* Assets.xcassets */; };
 		52908F2920206A250022BD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52908F2720206A250022BD71 /* LaunchScreen.storyboard */; };
@@ -24,9 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520D2D492021ABE300592DC0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		520D2D4B2021ABF500592DC0 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
 		52908F1B20206A250022BD71 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52908F1E20206A250022BD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52908F2020206A250022BD71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52908F2320206A250022BD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52908F2520206A250022BD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52908F2820206A250022BD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,9 +96,10 @@
 		52908F3220206D6E0022BD71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				52908F2020206A250022BD71 /* ViewController.swift */,
 				52908F3C202081CC0022BD71 /* LoginViewController.swift */,
 				52908F402020964D0022BD71 /* CreateUsernameViewController.swift */,
+				520D2D492021ABE300592DC0 /* HomeViewController.swift */,
+				520D2D4B2021ABF500592DC0 /* FindFriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,8 +322,9 @@
 				52908F3F202093460022BD71 /* User.swift in Sources */,
 				52908F3D202081CC0022BD71 /* LoginViewController.swift in Sources */,
 				52CEF8032020A906001E91C8 /* UserService.swift in Sources */,
+				520D2D4A2021ABE300592DC0 /* HomeViewController.swift in Sources */,
 				52CEF8072020B86A001E91C8 /* Storyboard+Utility.swift in Sources */,
-				52908F2120206A250022BD71 /* ViewController.swift in Sources */,
+				520D2D4C2021ABF500592DC0 /* FindFriendsViewController.swift in Sources */,
 				52CEF8052020B7BC001E91C8 /* Constants.swift in Sources */,
 				52908F412020964D0022BD71 /* CreateUsernameViewController.swift in Sources */,
 				52908F1F20206A250022BD71 /* AppDelegate.swift in Sources */,
