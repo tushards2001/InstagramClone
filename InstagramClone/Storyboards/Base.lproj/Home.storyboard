@@ -6,11 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Instagram-->
         <scene sceneID="kBo-58-XpC">
             <objects>
                 <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="onZ-mm-MU1" customClass="HomeViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,8 +24,48 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostHeaderCell" rowHeight="54" id="OVC-Ng-cAq" customClass="PostHeaderCell" customModule="InstagramClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OVC-Ng-cAq" id="fob-iw-58M">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nP5-r6-btW">
+                                                    <rect key="frame" x="331" y="4" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="Ycr-cB-Maz"/>
+                                                        <constraint firstAttribute="height" constant="44" id="p9D-6Z-DSh"/>
+                                                    </constraints>
+                                                    <state key="normal" image="btn_options_black"/>
+                                                    <connections>
+                                                        <action selector="optionButtonTapped:" destination="OVC-Ng-cAq" eventType="touchUpInside" id="ukv-CA-7ZR"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsQ-cF-zyQ">
+                                                    <rect key="frame" x="15" y="16" width="308" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="UKV-et-1QV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QsQ-cF-zyQ" firstAttribute="leading" secondItem="fob-iw-58M" secondAttribute="leadingMargin" id="0GX-CD-h7J"/>
+                                                <constraint firstItem="nP5-r6-btW" firstAttribute="leading" secondItem="QsQ-cF-zyQ" secondAttribute="trailing" constant="8" id="2rs-kg-QnP"/>
+                                                <constraint firstAttribute="trailing" secondItem="nP5-r6-btW" secondAttribute="trailing" id="IbN-Ml-imX"/>
+                                                <constraint firstItem="nP5-r6-btW" firstAttribute="centerY" secondItem="fob-iw-58M" secondAttribute="centerY" id="PMX-hk-wef"/>
+                                                <constraint firstItem="QsQ-cF-zyQ" firstAttribute="centerY" secondItem="nP5-r6-btW" secondAttribute="centerY" id="S41-ed-tRw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="usernameLabel" destination="QsQ-cF-zyQ" id="aes-WX-msp"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="375" id="d2N-aH-fux" customClass="PostImageCell" customModule="InstagramClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="375"/>
+                                        <rect key="frame" x="0.0" y="82" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d2N-aH-fux" id="YXA-SU-YVb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
@@ -44,6 +86,66 @@
                                             <outlet property="postImageView" destination="b85-et-pHN" id="rpu-dL-xad"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostActionCell" rowHeight="46" id="Hfv-XH-Ziz" customClass="PostActionCell" customModule="InstagramClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="457" width="375" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hfv-XH-Ziz" id="EO1-8E-25R">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-m9-zp1">
+                                                    <rect key="frame" x="2" y="0.0" width="46" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Qab-m9-zp1" secondAttribute="height" multiplier="1:1" id="kLu-tV-g2l"/>
+                                                    </constraints>
+                                                    <state key="normal" image="btn_heart_black_outline"/>
+                                                    <state key="selected" image="btn_heart_red_solid"/>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="Hfv-XH-Ziz" eventType="touchUpInside" id="axN-oZ-EEh"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjF-iP-Ao6">
+                                                    <rect key="frame" x="56" y="12" width="47.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="31 Minutes Ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg5-js-8Pc">
+                                                    <rect key="frame" x="111.5" y="12" width="248.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSd-v1-HGf">
+                                                    <rect key="frame" x="15" y="44" width="345" height="1"/>
+                                                    <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="xdP-r7-zxn"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zjF-iP-Ao6" secondAttribute="bottom" constant="2" id="77H-py-WSO"/>
+                                                <constraint firstItem="Mg5-js-8Pc" firstAttribute="leading" secondItem="zjF-iP-Ao6" secondAttribute="trailing" constant="8" id="78D-Or-E4O"/>
+                                                <constraint firstItem="zjF-iP-Ao6" firstAttribute="leading" secondItem="Qab-m9-zp1" secondAttribute="trailing" constant="8" id="Igf-Dt-2e7"/>
+                                                <constraint firstItem="Mg5-js-8Pc" firstAttribute="trailing" secondItem="EO1-8E-25R" secondAttribute="trailingMargin" id="LkQ-ga-Pub"/>
+                                                <constraint firstAttribute="bottom" secondItem="LSd-v1-HGf" secondAttribute="bottom" id="WvA-Pm-csz"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qab-m9-zp1" secondAttribute="bottom" id="g21-by-7Q3"/>
+                                                <constraint firstItem="Mg5-js-8Pc" firstAttribute="top" secondItem="EO1-8E-25R" secondAttribute="topMargin" constant="1" id="lF2-Bp-9tJ"/>
+                                                <constraint firstItem="zjF-iP-Ao6" firstAttribute="top" secondItem="EO1-8E-25R" secondAttribute="topMargin" constant="1" id="ltA-8w-p1d"/>
+                                                <constraint firstAttribute="trailing" secondItem="LSd-v1-HGf" secondAttribute="trailing" constant="15" id="sG2-ph-IO8"/>
+                                                <constraint firstItem="LSd-v1-HGf" firstAttribute="leading" secondItem="EO1-8E-25R" secondAttribute="leading" constant="15" id="szS-QT-5MZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Mg5-js-8Pc" secondAttribute="bottom" constant="2" id="vIm-5J-1VT"/>
+                                                <constraint firstItem="Qab-m9-zp1" firstAttribute="leading" secondItem="EO1-8E-25R" secondAttribute="leading" constant="2" id="vda-4y-bUg"/>
+                                                <constraint firstItem="Qab-m9-zp1" firstAttribute="top" secondItem="EO1-8E-25R" secondAttribute="top" id="vfI-vn-Xyx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="likeButton" destination="Qab-m9-zp1" id="wk1-Si-W4w"/>
+                                            <outlet property="likeCountLabel" destination="zjF-iP-Ao6" id="uF8-7T-dbi"/>
+                                            <outlet property="timeAgoLabel" destination="Mg5-js-8Pc" id="adQ-bP-4tU"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="onZ-mm-MU1" id="FWS-Nd-USC"/>
@@ -60,7 +162,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3cg-9v-OJB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FbD-pE-m18"/>
+                    <navigationItem key="navigationItem" title="Instagram" id="FbD-pE-m18"/>
                     <connections>
                         <outlet property="tableView" destination="NaL-Pl-wue" id="Gf1-fa-5t3"/>
                     </connections>
@@ -92,6 +194,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_heart_black_outline" width="24" height="24"/>
+        <image name="btn_heart_red_solid" width="24" height="24"/>
+        <image name="btn_options_black" width="24" height="24"/>
         <image name="tab_home_black" width="25" height="25"/>
     </resources>
 </document>

@@ -27,6 +27,11 @@
 		52908F3F202093460022BD71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52908F3E202093460022BD71 /* User.swift */; };
 		52908F412020964D0022BD71 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52908F402020964D0022BD71 /* CreateUsernameViewController.swift */; };
 		5290AE742022FD1800301909 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290AE732022FD1800301909 /* PostImageCell.swift */; };
+		5290AE76202300F200301909 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290AE75202300F200301909 /* PostHeaderCell.swift */; };
+		5290AE782023020900301909 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290AE772023020900301909 /* PostActionCell.swift */; };
+		5290AE7A20230AD100301909 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290AE7920230AD100301909 /* LikeService.swift */; };
+		5290AE7C202338E100301909 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5290AE7B202338E100301909 /* FollowService.swift */; };
+		5290AE802023510600301909 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5290AE7F2023510400301909 /* FindFriends.storyboard */; };
 		52CEF8032020A906001E91C8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CEF8022020A906001E91C8 /* UserService.swift */; };
 		52CEF8052020B7BC001E91C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CEF8042020B7BC001E91C8 /* Constants.swift */; };
 		52CEF8072020B86A001E91C8 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CEF8062020B86A001E91C8 /* Storyboard+Utility.swift */; };
@@ -56,6 +61,11 @@
 		52908F3E202093460022BD71 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52908F402020964D0022BD71 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		5290AE732022FD1800301909 /* PostImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		5290AE75202300F200301909 /* PostHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
+		5290AE772023020900301909 /* PostActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
+		5290AE7920230AD100301909 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		5290AE7B202338E100301909 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
+		5290AE7E2023510400301909 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FindFriends.storyboard; sourceTree = "<group>"; };
 		52C795E23F51008C047E2F57 /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		52CEF8022020A906001E91C8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		52CEF8042020B7BC001E91C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -156,6 +166,8 @@
 				52CEF8022020A906001E91C8 /* UserService.swift */,
 				520D2D512021DE7100592DC0 /* StorageService.swift */,
 				520D2D532021E06900592DC0 /* PostService.swift */,
+				5290AE7920230AD100301909 /* LikeService.swift */,
+				5290AE7B202338E100301909 /* FollowService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 		52908F3720206DC00022BD71 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5290AE7F2023510400301909 /* FindFriends.storyboard */,
 				520D2D5F20220B0D00592DC0 /* Home.storyboard */,
 				52908F2720206A250022BD71 /* LaunchScreen.storyboard */,
 				52908F2220206A250022BD71 /* Main.storyboard */,
@@ -185,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				5290AE732022FD1800301909 /* PostImageCell.swift */,
+				5290AE75202300F200301909 /* PostHeaderCell.swift */,
+				5290AE772023020900301909 /* PostActionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +286,7 @@
 				52908F2920206A250022BD71 /* LaunchScreen.storyboard in Resources */,
 				52908F3B2020814B0022BD71 /* Login.storyboard in Resources */,
 				52908F2620206A250022BD71 /* Assets.xcassets in Resources */,
+				5290AE802023510600301909 /* FindFriends.storyboard in Resources */,
 				520D2D6020220B1000592DC0 /* Home.storyboard in Resources */,
 				52908F3120206AE80022BD71 /* GoogleService-Info.plist in Resources */,
 				52908F2420206A250022BD71 /* Main.storyboard in Resources */,
@@ -349,11 +365,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5290AE7C202338E100301909 /* FollowService.swift in Sources */,
 				52908F3F202093460022BD71 /* User.swift in Sources */,
 				520D2D522021DE7100592DC0 /* StorageService.swift in Sources */,
 				52908F3D202081CC0022BD71 /* LoginViewController.swift in Sources */,
 				520D2D4E2021BD6E00592DC0 /* MainTabBarController.swift in Sources */,
 				52CEF8032020A906001E91C8 /* UserService.swift in Sources */,
+				5290AE782023020900301909 /* PostActionCell.swift in Sources */,
+				5290AE7A20230AD100301909 /* LikeService.swift in Sources */,
 				520D2D562021E6D000592DC0 /* Post.swift in Sources */,
 				5290AE742022FD1800301909 /* PostImageCell.swift in Sources */,
 				520D2D582021ED1300592DC0 /* UIImage+Size.swift in Sources */,
@@ -365,6 +384,7 @@
 				52CEF8052020B7BC001E91C8 /* Constants.swift in Sources */,
 				520D2D542021E06900592DC0 /* PostService.swift in Sources */,
 				52908F412020964D0022BD71 /* CreateUsernameViewController.swift in Sources */,
+				5290AE76202300F200301909 /* PostHeaderCell.swift in Sources */,
 				52908F1F20206A250022BD71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +416,15 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+		};
+		5290AE7F2023510400301909 /* FindFriends.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5290AE7E2023510400301909 /* Base */,
+			);
+			name = FindFriends.storyboard;
+			path = /L10/Tushar/Learning/InstagramClone/InstagramClone/Storyboards;
+			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
