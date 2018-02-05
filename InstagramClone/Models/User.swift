@@ -12,6 +12,7 @@ import FirebaseDatabase.FIRDataSnapshot
 class User: NSObject {
     
     private static var _current: User?
+    var isFollowed = false
     
     static var current: User {
         guard let currentUser = _current else {
