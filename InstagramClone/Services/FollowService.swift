@@ -12,7 +12,7 @@ import FirebaseDatabase
 struct FollowService {
     
     private static func followUser(_user user: User, forCurrentUserWithSuccess success:@escaping(Bool) -> Void) {
-        let currentUID = User.current.uid
+        let currentUID = User.current.uid!
         let followData = ["followers/\(String(describing: user.uid))/\(String(describing: currentUID))" : true,
                           "following/\(String(describing: currentUID))/\(String(describing: user.uid))" : true]
         
@@ -23,12 +23,30 @@ struct FollowService {
                 assertionFailure(error.localizedDescription)
             }
             
-            return success(error == nil)
+            UserService.posts(for: user) { (posts) in
+                
+                let postKeys = posts.flatMap { $0.key }
+                
+                // 3
+                var followData = [String : Any]()
+                let timelinePostDict = ["poster_uid" : user.uid]
+                postKeys.forEach { followData["timeline/\(currentUID)/\($0)"] = timelinePostDict }
+                
+                
+                ref.updateChildValues(followData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    
+                    success(error == nil)
+                })
+            }
         }
     }
     
     private static func unfollowUser(_user user: User, forCurrentUserWithSuccess success:@escaping(Bool) -> Void) {
-        let currentUID = User.current.uid
+        let currentUID = User.current.uid!
         let followData = ["followers/\(String(describing: user.uid))/\(String(describing: currentUID))" : NSNull(),
                           "following/\(String(describing: currentUID))/\(String(describing: user.uid))" : NSNull()]
         
@@ -37,9 +55,24 @@ struct FollowService {
         ref.updateChildValues(followData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
+                return success(false)
             }
             
-            return success(error == nil)
+            UserService.posts(for: user, completion: { (posts) in
+                var unfollowData = [String: Any]()
+                let postsKeys = posts.flatMap { $0.key }
+                postsKeys.forEach {
+                    unfollowData["timeline/\(currentUID)/\($0)"] = NSNull()
+                }
+                
+                ref.updateChildValues(unfollowData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    success(error == nil)
+                })
+            })
         }
     }
     
@@ -52,7 +85,7 @@ struct FollowService {
     }
     
     static func isUserFollowed(_user user: User, byCurrentUserWithCompletion completion: @escaping(Bool) -> Void) {
-        let currentUID = User.current.uid
+        let currentUID = User.current.uid!
         
         let ref = Database.database().reference().child("followers").child(user.uid!)
         
